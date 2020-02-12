@@ -4,12 +4,6 @@ library(pbapply)
 
 hsGO <- godata('org.Hs.eg.db', ont="MF")
 
-go1  <- c("GO:0004022","GO:0004024","GO:0004174")
-
-go2 <- c("GO:0009055","GO:0005515")
-
-mgoSim(go1, go2, semData = hsGO, measure = "Wang", combine = NULL)
-
 finite_go <- names(slot(hsGO, "IC")[!is.infinite(slot(hsGO, "IC"))])
 
 set.seed(15922)
